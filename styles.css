@@ -1,0 +1,60 @@
+/* Category color chips */
+.cat-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: .375rem;
+	border-radius: 999px;
+	font-size: .75rem;
+	padding: .125rem .5rem;
+	font-weight: 600;
+	background-color: #eef2f7;
+}
+
+.cat-dot {
+	width: .5rem;
+	height: .5rem;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+/* Category palette */
+.cat-food { background-color: #ffe6e6; }
+.cat-food .cat-dot { background-color: #ff4d4f; }
+
+.cat-transport { background-color: #e6f4ff; }
+.cat-transport .cat-dot { background-color: #1677ff; }
+
+.cat-entertainment { background-color: #fff1e6; }
+.cat-entertainment .cat-dot { background-color: #fa8c16; }
+
+.cat-bills { background-color: #f6ffed; }
+.cat-bills .cat-dot { background-color: #52c41a; }
+
+.cat-other { background-color: #f9f0ff; }
+.cat-other .cat-dot { background-color: #722ed1; }
+
+/* Tighten card paddings on small screens */
+@media (max-width: 576px) {
+	.card-body { padding: .75rem; }
+}
+
+/* Custom bars */
+.bar-row { display: grid; grid-template-columns: 100px 1fr auto; gap: .5rem; align-items: center; }
+.bar-label { font-size: .8rem; color: #6c757d; }
+.bar-track { background: #eef2f7; height: 10px; border-radius: 999px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 999px; transition: width .3s ease; }
+.bar-value { font-weight: 600; font-size: .85rem; }
+.bar-click { cursor: pointer; }
+
+/* List item layout */
+.expense-item {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: .25rem .5rem;
+	align-items: center;
+}
+.expense-title { font-weight: 600; }
+.expense-meta { font-size: .8rem; color: #6c757d; }
+.expense-amount { font-weight: 700; }
+
+
