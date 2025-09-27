@@ -58,7 +58,7 @@
                 </div>
                 
                 <div class="d-grid gap-2 mt-4">
-                  <button type="button" class="btn btn-success btn-lg" id="addExpensesBtn">Add Expense</button>
+                  <button type="button" class="btn btn-success btn-lg" id="addExpensesBtn">Add Expenses</button>
                 </div>
               </form>
             </div>
@@ -70,42 +70,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // Load saved profile data if any
-        loadProfileData();
-        
-        // Handle form submission
-        document.getElementById('profileForm').addEventListener('submit', function(e) {
-          e.preventDefault();
-          saveProfileData();
-          alert('Profile saved successfully!');
-        });
-        
         // Handle Add Expenses button
         document.getElementById('addExpensesBtn').addEventListener('click', function() {
-          // Save current form data before navigating
+          // Save current profile data before navigating
           saveProfileData();
-          // Navigate to index.html
+          // Navigate to index2.html
           window.location.href = 'index2.html';
         });
       });
       
       function saveProfileData() {
+        // Since we're displaying static data, we'll save the hardcoded values
         const profileData = {
-          name: document.getElementById('userName').value,
-          address: document.getElementById('userAddress').value,
-          phone: document.getElementById('userPhone').value
+          name: 'Sanindu Dewsith',
+          address: 'Galle',
+          phone: '077123456'
         };
         localStorage.setItem('userProfile', JSON.stringify(profileData));
-      }
-      
-      function loadProfileData() {
-        const savedData = localStorage.getItem('userProfile');
-        if (savedData) {
-          const profileData = JSON.parse(savedData);
-          document.getElementById('userName').value = profileData.name || '';
-          document.getElementById('userAddress').value = profileData.address || '';
-          document.getElementById('userPhone').value = profileData.phone || '';
-        }
       }
     </script>
   </body>
